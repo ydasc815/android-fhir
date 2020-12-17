@@ -15,14 +15,24 @@
 -->
 
 <resources>
-    <string name="app_name">FHIR Engine Example</string>
-    <string name="title_patient_list">Registered Patients</string>
-    <string name="title_patient_detail">SamplePatient Detail</string>
-    <string name="menu_about">About Fhir Engine</string>
-    <string name="menu_load_resource">Load CQL Resources</string>
-    <string name="menu_sync_resources">Sync Resources</string>
-    <string name="about_text">For more on Fhir Engine: go/afya</string>
+  <string name="app_name">FHIR Engine Example</string>
+  <string name="title_patient_list">Registered Patients</string>
+  <string name="title_patient_detail">SamplePatient Detail</string>
+  <string name="title_register_patient">Register Patient</string>
+  <string name="menu_about">About Fhir Engine</string>
+  <string name="menu_load_resource">Load CQL Resources</string>
+  <string name="menu_sync_resources">Sync Resources</string>
+  <string name="about_text">For more on Fhir Engine: go/afya</string>
 
-    <!-- For display observations in brief, for a patient -->
-    <string name="observation_brief_text">%1$s: %2$s\nEffective: %3$s</string>
+  <!-- For display observations in brief, for a patient -->
+  <string name="observation_brief_text">%1$s: %2$s\nEffective: %3$s</string>
+  <string name="title_activity_login">LoginActivity</string>
+  <string name="prompt_email">Email</string>
+  <string name="prompt_password">Password</string>
+  <string name="action_sign_in">Sign in or register</string>
+  <string name="action_sign_in_short">Sign in</string>
+  <string name="welcome">"Welcome !"</string>
+  <string name="invalid_username">Not a valid username</string>
+  <string name="invalid_password">Password must be >5 characters</string>
+  <string name="login_failed">"Login failed"</string>
 </resources>
