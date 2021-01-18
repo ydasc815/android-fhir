@@ -16,6 +16,7 @@
 
 package com.google.fhirengine.example
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -51,5 +52,10 @@ class PatientItemRecyclerViewAdapter(
     override fun onBindViewHolder(holder: PatientItemViewHolder, position: Int) {
         val item = currentList[position]
         holder.bindTo(item, onItemClicked)
+    }
+
+    override fun onCurrentListChanged(previousList: MutableList<PatientListViewModel.PatientItem>, currentList: MutableList<PatientListViewModel.PatientItem>) {
+        super.onCurrentListChanged(previousList, currentList)
+        Log.d("PatientItemRecyclerVA", "previous ${previousList.count()} now ${currentList.count()} records")
     }
 }

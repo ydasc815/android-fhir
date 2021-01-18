@@ -18,6 +18,7 @@ package com.google.fhirengine.example
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -69,7 +70,7 @@ class PatientListActivity : AppCompatActivity() {
         patientListViewModel.getSearchedPatients().observe(this,
             Observer<List<PatientListViewModel.PatientItem>> {
                 Log.d("PatientListActivity", "Submitting ${it.count()} patient records")
-                adapter.submitList(it)
+                adapter.submitList(it?.toMutableList())
             })
 
         patientListViewModel.getObservations().observe(this,
@@ -114,10 +115,6 @@ class PatientListActivity : AppCompatActivity() {
                 loadResources()
                 true
             }
-            R.id.about -> {
-                showAbout(view)
-                true
-            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -126,11 +123,11 @@ class PatientListActivity : AppCompatActivity() {
         val resLoadIntent = Intent(baseContext, CqlLoadActivity::class.java)
         startActivity(resLoadIntent)
     }
-
-    private fun showAbout(view: View) {
-        Snackbar.make(view, R.string.about_text, Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show()
-    }
+//
+//    private fun showAbout(view: View) {
+//        Snackbar.make(view, R.string.about_text, Snackbar.LENGTH_LONG)
+//            .setAction("Action", null).show()
+//    }
 
     private fun syncResources(view: View) {
         Snackbar.make(view, "Getting Patients List", Snackbar.LENGTH_LONG)
