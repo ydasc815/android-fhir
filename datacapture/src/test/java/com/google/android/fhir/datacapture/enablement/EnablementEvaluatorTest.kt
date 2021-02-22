@@ -399,6 +399,44 @@ class EnablementEvaluatorTest {
     }
 
     @Test
+    fun evaluate_expectsAnswerGroup_answerEqual_shouldReturnTrue() {
+        assertThat(
+            EnablementEvaluator.evaluate(Questionnaire.Item.newBuilder()
+                .addEnableWhen(
+                    Questionnaire.Item.EnableWhen.newBuilder()
+                        .setQuestion(String.newBuilder().setValue("q1"))
+                        .setOperator(
+                            Questionnaire.Item.EnableWhen.OperatorCode.newBuilder()
+                                .setValue(QuestionnaireItemOperatorCode.Value.EQUALS)
+                        )
+                        .setAnswer(
+                            Questionnaire.Item.EnableWhen.AnswerX.newBuilder().apply {
+                                boolean = Boolean.newBuilder().setValue(true).build()
+                            }
+                        )
+                )
+                .setType(Questionnaire.Item.TypeCode.newBuilder()
+                    .setValue(QuestionnaireItemTypeCode.Value.GROUP))
+                .build()
+            ) {
+                if (it == "q1") {
+                    QuestionnaireResponse.Item.newBuilder()
+                        .addAnswer(QuestionnaireResponse.Item.Answer.newBuilder()
+                            .apply {
+                                value = QuestionnaireResponse.Item.Answer.ValueX.newBuilder()
+                                    .setBoolean(Boolean.newBuilder().setValue(true).build())
+                                    .build()
+                            }
+                        )
+                        .build()
+                } else {
+                    null
+                }
+            }
+        ).isTrue()
+    }
+
+    @Test
     fun evaluate_expectsAnswer_answerDoesNotEqual_shouldReturnFalse() {
         assertThat(
             EnablementEvaluator.evaluate(Questionnaire.Item.newBuilder()
