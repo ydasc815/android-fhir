@@ -94,6 +94,12 @@ class QuestionnaireListFragment : Fragment() {
             "HL7 example \"bb\" with questionnaire response to pre-fill answers",
             "hl7-questionnaire-example-bluebook.json",
             "hl7-questionnaireresponse-example-bluebook.json"
+          ),
+          // Example taken from https://ucc.uhcitp.in/publicbedrequest
+          QuestionnaireListItem(
+            "Tamil Nadu Public Bed Request",
+            "Covid-19 War Room",
+            "tamil-nadu-public-bed-request.json"
           )
         )
       )

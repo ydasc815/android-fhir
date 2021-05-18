@@ -1,0 +1,380 @@
+{
+  "status": "active",
+  "title": "Tamil Nadu COVID-19 Public Bed Request",
+  "resourceType": "Questionnaire",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+    ],
+    "tag": [
+      {
+        "code": "lformsVersion: 29.0.3"
+      }
+    ]
+  },
+  "item": [
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "1",
+      "text": "Basic",
+      "item": [
+        {
+          "type": "string",
+          "required": true,
+          "linkId": "1.1",
+          "text": "Address"
+        },
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ],
+                "text": "Drop down"
+              }
+            }
+          ],
+          "required": true,
+          "linkId": "1.2",
+          "text": "Where the patient wants bed",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Government Hospital"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Private Hospital"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Any Of The Above"
+              }
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ],
+                "text": "Drop down"
+              }
+            }
+          ],
+          "required": true,
+          "linkId": "1.3",
+          "text": "Type of Bed",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "ICU"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Ventilator Bed"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "O2 Bed"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Non O2 Bed"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "CCC"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "ICU Bed With Ventilator"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Any Of The Above"
+              }
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "required": false,
+          "linkId": "1.4",
+          "text": "Counseling Required"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "2",
+      "text": "Symptoms",
+      "item": [
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ],
+                "text": "Drop down"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": true,
+          "linkId": "2.1",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Confusion"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Breathlessness"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Continuous Fever"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "3",
+      "text": "Comorbidity",
+      "item": [
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ],
+                "text": "Drop down"
+              }
+            }
+          ],
+          "required": false,
+          "repeats": true,
+          "linkId": "3.1",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Diabetes Mellitus (DM)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "HyperTension (HT)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Ischemic Heart Disease (IHD / CHD / CCF)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Tuberculosis (TB)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Asthma/COPD"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Chronic Kidney Disease"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "4",
+      "text": "Vital Signs",
+      "item": [
+        {
+          "type": "integer",
+          "required": false,
+          "linkId": "4.1",
+          "text": "Saturation (SpO2 %)"
+        },
+        {
+          "type": "boolean",
+          "required": false,
+          "linkId": "4.2",
+          "text": "Whether patient is on O2? (L/min)"
+        },
+        {
+          "type": "integer",
+          "required": false,
+          "linkId": "4.3",
+          "text": "Respiratory Rate (per min)"
+        },
+        {
+          "type": "integer",
+          "required": false,
+          "linkId": "4.4",
+          "text": "Pulse Rate (per min)"
+        },
+        {
+          "type": "display",
+          "text": "BP"
+        },
+        {
+          "type": "integer",
+          "required": false,
+          "linkId": "4.6",
+          "text": "Systolic"
+        },
+        {
+          "type": "integer",
+          "required": false,
+          "linkId": "4.7",
+          "text": "Diastolic"
+        },
+        {
+          "type": "string",
+          "required": false,
+          "linkId": "4.8",
+          "text": "CT Scan Report Score"
+        },
+        {
+          "type": "integer",
+          "required": false,
+          "linkId": "4.9"
+        },
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ],
+                "text": "Drop down"
+              }
+            }
+          ],
+          "required": false,
+          "linkId": "4.10",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "25"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "40"
+              }
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down",
+                    "display": "Drop down"
+                  }
+                ],
+                "text": "Drop down"
+              }
+            }
+          ],
+          "required": true,
+          "linkId": "4.11",
+          "text": "RT-PCR",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Positive Covid19"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Negative Covid19"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Pending Result"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Test Not Done"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "required": false,
+          "linkId": "4.12",
+          "text": "Remarks"
+        }
+      ]
+    }
+  ]
+}
