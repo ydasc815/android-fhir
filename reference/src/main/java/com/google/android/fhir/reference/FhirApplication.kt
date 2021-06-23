@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
 import org.hl7.fhir.r4.model.ResourceType
 
 /**
- * Reference base class.
+ * Reference base class..
  */
 class FhirApplication : Application() {
   // Only initiate the FhirEngine when used for the first time, not when the app is created.
